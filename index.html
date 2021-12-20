@@ -38,16 +38,18 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="search">
                         <i class="fas fa-search"></i>
                         <input id="new-searc" type="text" placeholder="cerca o inizia una nuova chat">
                     </div>
+
                     <div class="my-contact">
-                        <div class="avatar-contact">
+                        <div v-for="(contact, index) in contacts" class="avatar-contact">
                             <div class="user">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 <div class="user-text">
-                                    <h5>Michele</h5>
+                                    <h5>{{ contact.name }}</h5>
                                     <p class="mini-text">Ok..</p>
                                 </div>
                             </div>
@@ -55,41 +57,7 @@
                                 <p class="date-text">20 12 2021 10:22:21</p>
                             </div>
                         </div>
-                        <div class="avatar-contact">
-                            <div class="user">
-                                <img src="img/avatar_2.jpg" alt="">
-                                <div class="user-text">
-                                    <h5>Fabio</h5>
-                                    <p class="mini-text">Mi piacerebbe davvero ma devo andare a...</p>
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="date-text">20 12 2021 10:22:21</p>
-                            </div>
-                        </div><div class="avatar-contact">
-                            <div class="user">
-                                <img src="img/avatar_3.jpg" alt="">
-                                <div class="user-text">
-                                    <h5>Samuele</h5>
-                                    <p class="mini-text">Ah scusa...</p>
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="date-text">20 12 2021 10:22:21</p>
-                            </div>
-                        </div>
-                        <div class="avatar-contact">
-                            <div class="user">
-                                <img src="img/avatar_4.jpg" alt="">
-                                <div class="user-text">
-                                    <h5>Luisa</h5>
-                                    <p class="mini-text">Si ma preferirei andare la ci...</p>
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="date-text">20 12 2021 10:22:21</p>
-                            </div>
-                        </div> 
+                      
                     </div>
                 </div>
 

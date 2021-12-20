@@ -39,7 +39,6 @@ html {
 .message {
     width: 70%;
     height: 100%;
-    background-color: yellowgreen;
 }
 
 .avatar {
@@ -53,7 +52,7 @@ html {
 }
 
 .avatar img {
-    width: 20%;
+    width: 50px;
     border-radius: 50%;
     padding-right: 5px;
 }
@@ -147,7 +146,7 @@ html {
 }
 
 .avatar-contact img {
-    width: 20%;
+    width: 50px;
     border-radius: 50%;
     padding-right: 5px;
 }
@@ -162,7 +161,7 @@ html {
 }
 
 .user-message img {
-    width: 8%;
+    width: 50px;
     border-radius: 50%;
     padding-right: 5px;
 }
