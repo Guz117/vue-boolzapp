@@ -18,6 +18,8 @@
         <div class="background-tot">
             <div id="app" class="boolzapp">
                 <div class="contact">
+
+                    <!-- Profilo utente-->
                     <div class="avatar">
                         <div class="user">
                             <img src="img/avatar_io.jpg" alt="">
@@ -29,6 +31,10 @@
                             <i class="fas fa-ellipsis-v icon-io"></i>
                         </div>
                     </div>
+                    <!-- /Profilo utente-->
+
+
+                    <!-- Nuove notifiche e messaggi -->
                     <div class="avatar-bell">
                         <div class="user-bell">
                             <i class="fas fa-bell-slash"></i>
@@ -38,12 +44,18 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /Nuove notifiche e messaggi -->
 
+
+                    <!-- Barra di ricerca contatti -->
                     <div class="search">
                         <i class="fas fa-search"></i>
                         <input id="new-searc" type="text" placeholder="cerca o inizia una nuova chat">
                     </div>
+                    <!-- /Barra di ricerca contatti -->
 
+
+                    <!-- I miei contatti -->
                     <div class="my-contact">
                         <div v-for="(contact, index) in contacts" class="avatar-contact">
                             <div class="user">
@@ -57,12 +69,14 @@
                                 <p class="date-text">20 12 2021 10:22:21</p>
                             </div>
                         </div>
-                      
                     </div>
+                    <!-- /I miei contatti -->
                 </div>
 
 
                 <div class="message">
+
+                    <!-- Utente con cui sto messaggindo -->
                     <div class="avatar-message">
                         <div class="user-message">
                             <img src="img/avatar_3.jpg" alt="">
@@ -77,6 +91,10 @@
                             <i class="fas fa-ellipsis-v icon-message"></i>
                         </div>
                     </div>
+                    <!-- /Utente con cui sto messaggindo -->
+
+
+                    <!-- Spazio messaggi -->
                     <div class="screen-messages">
                         <div class="screen-messages-tot">
                             <div class="central-messages">
@@ -109,12 +127,16 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /Spazio messaggi -->
 
+
+                    <!-- Scrivi messaggi -->
                     <div class="write-message">
                         <i class="far fa-smile"></i>
                         <input id="write" type="text" placeholder="Scrivi messaggio">
                         <i class="fas fa-microphone"></i>
                     </div>
+                     <!-- /Scrivi messaggi -->
                 </div>
 
             </div>
