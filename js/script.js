@@ -18,7 +18,7 @@ Click sul contatto mostra la conversazione del contatto cliccato
 var app = new Vue({
     el: '#app',
     data: {
-      active: 0,
+      active: 1,
         contacts: [
             {
               name: "Michele",

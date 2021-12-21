@@ -98,8 +98,8 @@
                     <!-- Spazio messaggi -->
                     <div class="screen-messages">
                         <div class="screen-messages-tot">
-                            <div class="central-messages">
-                                <div class="message-left" v-for="message in contacts[active].messages" v-if="(message.status == 'sent' ? 'send' : '')">
+                            <div class="central-messages" v-for="message in contacts[active].messages">
+                                <div class="message-left" v-if="(message.status == 'sent' ? 'sent' : '')">
                                     <div class="message-left-top">
                                         <p class="text-message">{{ message.text }}</p>
                                     </div>
@@ -107,7 +107,7 @@
                                         <p class="date-message">{{ message.date }}</p>
                                     </div>
                                 </div>
-                                <div class="right" v-for="message in contacts[active].messages" v-if="(message.status == 'sent' ? '' : 'received')">
+                                <div class="right" v-if="(message.status == 'sent' ? '' : 'received')">
                                     <div class="message-right">
                                         <div class="message-right-top">
                                             <p class="text-message">{{ message.text }}</p>
