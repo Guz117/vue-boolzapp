@@ -179,7 +179,7 @@ html {
 
 
 /* messaggi */
-.message {
+.chat {
     width: 70%;
     height: 100%;
 }
@@ -234,14 +234,17 @@ html {
     height: 100%;
     margin: 0 auto;
     padding: 10px 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.message-left {
+.send {
     background-color: #ffffff;
     width: 50%;
     padding: 5px;
     margin-bottom: 5px;
     border-radius: 10px;
+    align-self: flex-start;
 }
 
 .text-message, .date-message {
@@ -255,19 +258,17 @@ html {
 .date-message {
     font-size: 0.5em;
     color: #c3c5c7;
-}
-
-.message-left-bottom {
     display: flex;
     justify-content: flex-end;
 }
 
-.message-right {
+.received {
     background-color: #d5f9ba;
     width: 50%;
     padding: 5px;
     margin-bottom: 5px;
     border-radius: 10px;
+    align-self: flex-end;
 }
 
 .message-right-bottom {
