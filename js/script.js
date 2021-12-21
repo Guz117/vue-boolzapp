@@ -73,17 +73,17 @@ var app = new Vue({
                 {
                   date: "28/03/2020 10:10:40",
                   text: "La Marianna va in campagna",
-                  status: "received",
+                  status: "sent",
                 },
                 {
                   date: "28/03/2020 10:20:10",
                   text: "Sicuro di non aver sbagliato chat?",
-                  status: "sent",
+                  status: "received",
                 },
                 {
                   date: "28/03/2020 16:15:22",
                   text: "Ah scusa!",
-                  status: "received",
+                  status: "sent",
                 },
               ],
             },
@@ -105,6 +105,5 @@ var app = new Vue({
               ],
             },
           ]
-    },
-    
+    },     
   })

@@ -80,9 +80,9 @@
                     <!-- Utente con cui sto messaggindo -->
                     <div class="avatar-message">
                         <div class="user-message">
-                            <img src="img/avatar_3.jpg" alt="">
+                            <img :src="`img/avatar${contacts[active].avatar}.jpg`" :alt="contacts[active].name" alt="">
                             <div class="user-text">
-                                <h5>Samuele</h5>
+                                <h5>{{ contacts[active].name }}</h5>
                                 <p class="mini-text">Ultimo accesso oggi alle 28/03/2020 16:15:22</p>
                             </div>
                         </div>
@@ -99,32 +99,32 @@
                     <div class="screen-messages">
                         <div class="screen-messages-tot">
                             <div class="central-messages">
-                                <div class="message-left">
+                                <div class="message-left" v-for="message in contacts[active].messages" v-if="(message.status == 'sent' ? 'send' : '')">
                                     <div class="message-left-top">
-                                        <p class="text-message">La Marianna va in campagna</p>
+                                        <p class="text-message">{{ message.text }}</p>
                                     </div>
                                     <div class="message-left-bottom">
-                                        <p class="date-message">28/03/2020 10:10:40</p>
+                                        <p class="date-message">{{ message.date }}</p>
                                     </div>
                                 </div>
-                                <div class="right">
+                                <div class="right" v-for="message in contacts[active].messages" v-if="(message.status == 'sent' ? '' : 'received')">
                                     <div class="message-right">
                                         <div class="message-right-top">
-                                            <p class="text-message">Sicuro di non aver sbagliato chat</p>
+                                            <p class="text-message">{{ message.text }}</p>
                                         </div>
                                         <div class="message-left-bottom">
-                                            <p class="date-message">28/03/2020 10:10:40</p>
+                                            <p class="date-message">{{ message.date }}</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="message-left">
+                                <!-- <div class="message-left">
                                     <div class="message-left-top">
                                         <p class="text-message">Ah scusa!</p>
                                     </div>
                                     <div class="message-left-bottom">
                                         <p class="date-message">28/03/2020 16:15:22</p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
