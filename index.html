@@ -23,8 +23,8 @@
                     <!-- Profilo utente-->
                     <div class="avatar">
                         <div class="user">
-                            <img src="img/avatar_io.jpg" alt="">
-                            <h5>Nume Utente</h5>
+                            <img src="img/avatar_7.jpg" alt="">
+                            <h5>Guz</h5>
                         </div>
                         <div class="icons-user-io">
                             <i class="fas fa-circle-notch icon-io"></i>
@@ -58,7 +58,7 @@
 
                     <!-- I miei contatti -->
                     <div class="my-contact">
-                        <div v-for="(contact, index) in contacts" class="avatar-contact" :class="(active == index) ? 'active' : ''">
+                        <div @click="changeUser(index)" v-for="(contact, index) in contacts" class="avatar-contact" :class="(active == index) ? 'active' : ''">
                             <div class="user">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 <div class="user-text">
