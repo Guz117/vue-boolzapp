@@ -170,7 +170,7 @@ html {
     background-color: #e9ebeb;
 }
 
-.avatar-contact:active {
+.avatar-contact.active {
     background-color: #e9ebeb;
 }
 /* /I miei contatti */

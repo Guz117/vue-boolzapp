@@ -17,6 +17,7 @@
         <div class="background-up"></div>
         <div class="background-tot">
             <div id="app" class="boolzapp">
+            
                 <div class="contact">
 
                     <!-- Profilo utente-->
@@ -39,7 +40,7 @@
                         <div class="user-bell">
                             <i class="fas fa-bell-slash"></i>
                             <div class="user-text">
-                                <h5>Ricevi notifiche d nuovi messaggi</h5>
+                                <h5>Ricevi notifiche di nuovi messaggi</h5>
                                 <p class="mini-text-bell">attiva notifiche desktop</p>
                             </div>
                         </div>
@@ -50,23 +51,23 @@
                     <!-- Barra di ricerca contatti -->
                     <div class="search">
                         <i class="fas fa-search"></i>
-                        <input id="new-searc" type="text" placeholder="cerca o inizia una nuova chat">
+                        <input id="new-searc" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- /Barra di ricerca contatti -->
 
 
                     <!-- I miei contatti -->
                     <div class="my-contact">
-                        <div v-for="(contact, index) in contacts" class="avatar-contact">
+                        <div v-for="(contact, index) in contacts" class="avatar-contact" :class="(active == index) ? 'active' : ''">
                             <div class="user">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 <div class="user-text">
                                     <h5>{{ contact.name }}</h5>
-                                    <p class="mini-text">Ok..</p>
+                                    <p class="mini-text">{{ contact.messages[1].text }}</p>
                                 </div>
                             </div>
                             <div class="date">
-                                <p class="date-text">20 12 2021 10:22:21</p>
+                                <p class="date-text">{{ contact.messages[1].date }}</p>
                             </div>
                         </div>
                     </div>
