@@ -280,6 +280,18 @@ html {
     display: flex;
     justify-content: flex-end;
 }
+
+.dropdown-content {
+    min-width: 250px;
+    display: none;
+    position: absolute;
+    bottom: -75%;
+    background-color: #f9f9f9;
+}
+
+.message:hover .dropdown-content {
+    display: block;
+}
 /* /Spazio messaggi */
 
 

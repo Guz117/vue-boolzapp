@@ -120,16 +120,41 @@ var app = new Vue({
       },
       addMessage: function () {
         if (this.newMessage.trim().length != 0) {
+          function addZero(i) {
+            if (i < 10) {i = "0" + i}
+            return i;
+          }
+          const d = new Date();
+          let day = addZero(d.getDate());
+          let month = addZero(d.getMonth() + 1);
+          let year = addZero(d.getFullYear());
+          let h = addZero(d.getHours());
+          let m = addZero(d.getMinutes());
+          let s = addZero(d.getSeconds());
+          let time = day + '/' + month + '/' + year + ' ' + h + ":" + m + ":" + s;
             let message = {
-              date: "10/01/2020 15:50:00",
+              date: time,
               text: this.newMessage,
               status: "recevied"
             }
+            
             this.contacts[this.active].messages.push(message);
             this.newMessage = ''
             setTimeout (() =>  {
+              function addZero(i) {
+                if (i < 10) {i = "0" + i}
+                return i;
+              }
+              const d = new Date();
+              let day = addZero(d.getDate());
+              let month = addZero(d.getMonth() + 1);
+              let year = addZero(d.getFullYear());
+              let h = addZero(d.getHours());
+              let m = addZero(d.getMinutes());
+              let s = addZero(d.getSeconds());
+              let time = day + '/' + month + '/' + year + ' ' + h + ":" + m + ":" + s;
               let messageOk = {
-                date: "10/01/2020 15:50:00",
+                date: time,
                 text: 'Ok',
                 status: "sent"
               }
