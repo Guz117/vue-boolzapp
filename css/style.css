@@ -296,7 +296,7 @@ html {
 #write {
     width: 80%;
     border-style: none;
-    padding: 5px 0;
+    padding: 5px 5px;
 }
 
 .fa-smile, .fa-microphone {

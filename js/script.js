@@ -120,6 +120,17 @@ var app = new Vue({
             }
             this.contacts[this.active].messages.push(message);
             this.newMessage = ''
+            setTimeout (appear, 1000);
+            function appear () {
+              let messageOk = 'Ok'
+              console.log(messageOk)
+              // {
+              //   date: "10/01/2020 15:50:00",
+              //   text: 'Ok',
+              //   status: "sent"
+              // }
+              // this.contacts[this.active].messages.push(messageOk);
+            }
         }
       },
     }    
