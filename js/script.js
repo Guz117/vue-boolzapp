@@ -19,6 +19,7 @@ var app = new Vue({
     el: '#app',
     data: {
       active: 0,
+      newMessage: '',
         contacts: [
             {
               name: "Michele",
@@ -109,6 +110,17 @@ var app = new Vue({
     methods: {
       changeUser: function (index) {
         this.active = index;
+      },
+      addMessage: function () {
+        if (this.newMessage.trim().length != 0) {
+            let message = {
+              date: "10/01/2020 15:50:00",
+              text: this.newMessage,
+              status: "recevied"
+            }
+            this.contacts[this.active].messages.push(message);
+            this.newMessage = ''
+        }
       },
     }    
   })
