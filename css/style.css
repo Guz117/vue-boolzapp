@@ -271,27 +271,48 @@ html {
     align-self: flex-end;
 }
 
-.message-right-bottom {
+.messaggio {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
-.right {
-    display: flex;
-    justify-content: flex-end;
+.dropdown {
+    opacity: 0;
 }
 
-.dropdown-content {
-    min-width: 250px;
-    display: none;
+.dropdown:hover {
+    opacity: 1;
+}
+
+.fa-chevron-down {
+    color: #c3c5c7;
+    font-size: 1em;
+}
+
+
+.dropdown-list {
+    list-style-type: none;
+    min-width: 100px;
     position: absolute;
-    bottom: -75%;
-    background-color: #f9f9f9;
+    right: 3%;
+    padding: 2px;
+    background-color: #f3eeeab7;
+    z-index: 99999;
 }
 
-.message:hover .dropdown-content {
-    display: block;
+
+.info-menu {
+    font-size: 0.8em;
 }
+
+.info-menu:hover {
+    background-color: dimgray;
+    cursor: pointer;
+    color: white;
+}
+
 /* /Spazio messaggi */
 
 

@@ -27,6 +27,7 @@ var app = new Vue({
     data: {
       active: 0,
       newMessage: '',
+      search: '',
         contacts: [
             {
               name: "Michele",
@@ -112,7 +113,8 @@ var app = new Vue({
                 },
               ],
             },
-          ]
+          ],
+          
     }, 
     methods: {
       changeUser: function (index) {
@@ -135,7 +137,8 @@ var app = new Vue({
             let message = {
               date: time,
               text: this.newMessage,
-              status: "recevied"
+              status: "recevied",
+              menuVisibility: false
             }
             
             this.contacts[this.active].messages.push(message);
@@ -156,12 +159,24 @@ var app = new Vue({
               let messageOk = {
                 date: time,
                 text: 'Ok',
-                status: "sent"
+                status: "sent",
+                menuVisibility: false
               }
               this.contacts[this.active].messages.push(messageOk);
               console.log(this)
             }, 1000)
         }
       },
-    }    
+      
+      searchContact: function(contact) {
+        let search = contact.name.toLowerCase().includes(this.search.toLowerCase());
+        return search
+    },  
+
+      searchChangeUser: function(index) {
+      this.active = index;
+      this.contacts[index].visible = true;
+      this.search = '';
+      },
+    },
   })
