@@ -25,7 +25,10 @@ riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 var app = new Vue({
     el: '#app',
     data: {
+      welcome: 'welcome',
+      benvenuto: 'Benvenuto in Boolzap',
       active: 0,
+      visibleMessages: 'invisible',
       newMessage: '',
       search: '',
         contacts: [
@@ -38,16 +41,19 @@ var app = new Vue({
                   date: "10/01/2020 15:30:55",
                   text: "Hai portato a spasso il cane?",
                   status: "sent",
+                  menuVisibility: false
                 },
                 {
                   date: "10/01/2020 15:50:00",
                   text: "Ricordati di dargli da mangiare",
                   status: "sent",
+                  menuVisibility: false
                 },
                 {
                   date: "10/01/2020 16:15:22",
                   text: "Tutto fatto!",
                   status: "received",
+                  menuVisibility: false
                 },
               ],
             },
@@ -60,16 +66,19 @@ var app = new Vue({
                   date: "20/03/2020 16:30:00",
                   text: "Ciao come stai?",
                   status: "sent",
+                  menuVisibility: false
                 },
                 {
                   date: "20/03/2020 16:30:55",
                   text: "Bene grazie! Stasera ci vediamo?",
                   status: "received",
+                  menuVisibility: false
                 },
                 {
                   date: "20/03/2020 16:35:00",
                   text: "Mi piacerebbe ma devo andare a fare la spesa.",
                   status: "sent",
+                  menuVisibility: false
                 },
               ],
             },
@@ -83,16 +92,19 @@ var app = new Vue({
                   date: "28/03/2020 10:10:40",
                   text: "La Marianna va in campagna",
                   status: "sent",
+                  menuVisibility: false
                 },
                 {
                   date: "28/03/2020 10:20:10",
                   text: "Sicuro di non aver sbagliato chat?",
                   status: "received",
+                  menuVisibility: false
                 },
                 {
                   date: "28/03/2020 16:15:22",
                   text: "Ah scusa!",
                   status: "sent",
+                  menuVisibility: false
                 },
               ],
             },
@@ -105,15 +117,28 @@ var app = new Vue({
                   date: "10/01/2020 15:30:55",
                   text: "Lo sai che ha aperto una nuova pizzeria?",
                   status: "sent",
+                  menuVisibility: false
                 },
                 {
                   date: "10/01/2020 15:50:00",
                   text: "Si, ma preferirei andare al cinema",
                   status: "received",
+                  menuVisibility: false
                 },
               ],
             },
           ],
+          risposte: [
+            "Abbi ancora un po' di pazienza",
+            'È uno spreco di soldi',
+            'Mettiti in gioco per scoprirlo',
+            'Procedi con passo più rilassato',
+            'È sicuro',
+            'Non te lo consiglio',
+            "Crepi l'avarizia",
+            'Sarà un buon momento per fare nuovi progetti',
+            'Vai oltre le apparenze'
+        ],
           
     }, 
     methods: {
@@ -156,9 +181,10 @@ var app = new Vue({
               let m = addZero(d.getMinutes());
               let s = addZero(d.getSeconds());
               let time = day + '/' + month + '/' + year + ' ' + h + ":" + m + ":" + s;
+              let frasiRandom = this.risposte[Math.floor(Math.random()*this.risposte.length)];
               let messageOk = {
                 date: time,
-                text: 'Ok',
+                text: frasiRandom,
                 status: "sent",
                 menuVisibility: false
               }
@@ -171,12 +197,36 @@ var app = new Vue({
       searchContact: function(contact) {
         let search = contact.name.toLowerCase().includes(this.search.toLowerCase());
         return search
-    },  
+      },  
 
       searchChangeUser: function(index) {
       this.active = index;
       this.contacts[index].visible = true;
       this.search = '';
       },
+
+      deleteMessage: function(index) {
+        this.contacts[this.active].messages.splice(index, 1);
+      },
+
+      
+      
     },
+
+    created() {
+      let welcome = setTimeout(() => {
+        this.welcome = '';
+        this.benvenuto = '';
+        this.visibleMessages = 'visible';
+      }, 2000);
+    },
+
+    computed: {
+      lastMessage() {
+        return this.contacts[this.active].messages[this.contacts[this.active].messages.length -1].text;
+      },
+      lastDate() {
+        return this.contacts[this.active].messages[this.contacts[this.active].messages.length -1].date;
+      }
+    }  
   })
