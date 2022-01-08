@@ -29,6 +29,7 @@ var app = new Vue({
       benvenuto: 'Benvenuto in Boolzap',
       active: 0,
       visibleMessages: 'invisible',
+      menuDropDown: false,
       newMessage: '',
       search: '',
         contacts: [
@@ -209,6 +210,32 @@ var app = new Vue({
         this.contacts[this.active].messages.splice(index, 1);
       },
 
+      darkMode: function () {
+        let darkModeScreen = document.querySelector('.screen-messages-tot');
+        darkModeScreen.classList.toggle("dark-mode-screen");
+        let darkModeMessageSend = document.querySelectorAll('.send');
+        for (let i = 0; i < darkModeMessageSend.length; i++) {
+          darkModeMessageSend[i].classList.toggle("dark-mode-message-send");
+        }
+        let darkModeMessageReceived = document.querySelectorAll('.received');
+        for (let i = 0; i < darkModeMessageReceived.length; i++) {
+          darkModeMessageReceived[i].classList.toggle("dark-mode-message-received");
+        }
+        let darkModeContact = document.querySelector('.contact');
+        darkModeContact.classList.toggle("dark-mode-contact");
+        let darkModeAvatar = document.querySelector('.avatar');
+        darkModeAvatar.classList.toggle("dark-mode-avatar");
+        let darkModeAvatarMessage = document.querySelector('.avatar-message');
+        darkModeAvatarMessage.classList.toggle("dark-mode-avatar-message");
+        let darkModeWriteMessage = document.querySelector('.write-message');
+        darkModeWriteMessage.classList.toggle("dark-mode-write-message");
+        let darkModeAvatarContact = document.querySelectorAll('.avatar-contact');
+        for (let i = 0; i < darkModeAvatarContact.length; i++) {
+          darkModeAvatarContact[i].classList.toggle("darck-mode-avatar-contact");
+        }
+        
+     }
+
       
       
     },
@@ -222,11 +249,8 @@ var app = new Vue({
     },
 
     computed: {
-      lastMessage() {
-        return this.contacts[this.active].messages[this.contacts[this.active].messages.length -1].text;
+      lastMessageOrData() {
+        return this.contacts[this.active].messages[this.contacts[this.active].messages.length -1];
       },
-      lastDate() {
-        return this.contacts[this.active].messages[this.contacts[this.active].messages.length -1].date;
-      }
     }  
   })

@@ -67,11 +67,11 @@
                                     <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                     <div class="user-text">
                                         <h5>{{ contact.name }}</h5>
-                                        <p class="mini-text">{{ lastMessage }}</p>
+                                        <p class="mini-text">{{ lastMessageOrData.text }}</p>
                                     </div>
                                 </div>
                                 <div class="date">
-                                    <p class="date-text">{{ contact.messages[1].date }}</p>
+                                    <p class="date-text">{{ lastMessageOrData.date }}</p>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,12 @@
                         <div class="icons-user-message">
                             <i class="fas fa-search icon-message"></i>
                             <i class="fas fa-paperclip icon-message"></i>
-                            <i class="fas fa-ellipsis-v icon-message"></i>
+                            <i @click="menuDropDown = !menuDropDown"class="fas fa-ellipsis-v icon-message"></i>
+                            <ul v-show="menuDropDown" class="dropdown-list">
+                                <li class="info-menu" @click="darkMode">
+                                    Dark mode
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <!-- /Utente con cui sto messaggindo -->

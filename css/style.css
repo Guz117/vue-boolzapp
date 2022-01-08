@@ -37,6 +37,10 @@ html {
     background-color: #fafafa;
 }
 
+.dark-mode-contact {
+    background-color: #033631;
+}
+
 
 /* Profilo utente */
 .avatar {
@@ -47,6 +51,10 @@ html {
     align-items: center;
     justify-content: space-between;
     border-right: 1px solid #b1b1b1;
+}
+
+.dark-mode-avatar {
+    background-color: #033631;
 }
 
 .avatar img {
@@ -160,6 +168,7 @@ html {
     cursor: pointer;
 }
 
+
 .avatar-contact img {
     width: 50px;
     border-radius: 50%;
@@ -170,8 +179,10 @@ html {
     background-color: #e9ebeb;
 }
 
-.avatar-contact.active {
-    background-color: #e9ebeb;
+
+
+.darck-mode-avatar-contact {
+    background-color: darkblue;
 }
 /* /I miei contatti */
 
@@ -193,6 +204,10 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.dark-mode-avatar-message {
+    background-color: #033631;
 }
 
 .user-message img {
@@ -240,6 +255,13 @@ html {
     background-image: url(../img/mine.jpg);
 }
 
+.dark-mode-screen {
+    width: 99%;
+    height: 100%;
+    background-color: black;
+    background-image: none;
+}
+
 .invisible {
     display: none;
 }
@@ -270,6 +292,11 @@ html {
     align-self: flex-start;
 }
 
+.dark-mode-message-send {
+    background-color: #507586;
+}
+
+
 .text-message, .date-message {
     padding: 0 2px;
 }
@@ -292,6 +319,10 @@ html {
     margin-bottom: 5px;
     border-radius: 10px;
     align-self: flex-end;
+}
+
+.dark-mode-message-received {
+    background-color: rgb(100, 98, 98);
 }
 
 .messaggio {
@@ -347,6 +378,10 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.dark-mode-write-message {
+    background-color: #033631;
 }
 
 #write {
