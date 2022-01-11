@@ -231,12 +231,19 @@ var app = new Vue({
         darkModeWriteMessage.classList.toggle("dark-mode-write-message");
         let darkModeAvatarContact = document.querySelectorAll('.avatar-contact');
         for (let i = 0; i < darkModeAvatarContact.length; i++) {
-          darkModeAvatarContact[i].classList.toggle("darck-mode-avatar-contact");
+          darkModeAvatarContact[i].classList.toggle("dark-mode-avatar-contact");
         }
         
-     }
+     },
 
-      
+     lastMessageOrData: function(index) {
+        if (this.contacts[this.active].messages.length > 0) {
+          return this.contacts[index].messages[this.contacts[index].messages.length -1];
+        } else {
+          return this.newMessage;
+        }
+       
+    },
       
     },
 
@@ -248,9 +255,5 @@ var app = new Vue({
       }, 2000);
     },
 
-    computed: {
-      lastMessageOrData() {
-        return this.contacts[this.active].messages[this.contacts[this.active].messages.length -1];
-      },
-    }  
+     
   })

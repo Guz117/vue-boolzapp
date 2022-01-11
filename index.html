@@ -67,11 +67,11 @@
                                     <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                     <div class="user-text">
                                         <h5>{{ contact.name }}</h5>
-                                        <p class="mini-text">{{ lastMessageOrData.text }}</p>
+                                        <p class="mini-text">{{ lastMessageOrData(index).text }}</p>
                                     </div>
                                 </div>
                                 <div class="date">
-                                    <p class="date-text">{{ lastMessageOrData.date }}</p>
+                                    <p class="date-text">{{ lastMessageOrData(index).date }}</p>
                                 </div>
                             </div>
                         </div>
@@ -102,13 +102,13 @@
                             <img :src="`img/avatar${contacts[active].avatar}.jpg`" :alt="contacts[active].name" alt="">
                             <div class="user-text">
                                 <h5>{{ contacts[active].name }}</h5>
-                                <p class="mini-text">Ultimo accesso oggi alle 28/03/2020 16:15:22</p>
+                                <p class="mini-text">Ultimo accesso oggi alle {{ lastMessageOrData(active).date }}</p>
                             </div>
                         </div>
                         <div class="icons-user-message">
                             <i class="fas fa-search icon-message"></i>
                             <i class="fas fa-paperclip icon-message"></i>
-                            <i @click="menuDropDown = !menuDropDown"class="fas fa-ellipsis-v icon-message"></i>
+                            <i @click="menuDropDown = !menuDropDown" class="fas fa-ellipsis-v icon-message"></i>
                             <ul v-show="menuDropDown" class="dropdown-list">
                                 <li class="info-menu" @click="darkMode">
                                     Dark mode
